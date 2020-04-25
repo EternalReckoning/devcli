@@ -1,0 +1,15 @@
+[package]
+name = "eternalreckoning-devcli"
+version = "0.1.0"
+authors = ["Henry Carlson <henry.carlson@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+eternalreckoning-messaging = { git = "https://github.com/EternalReckoning/messaging", tag = "v0.1.0" }
+
+env_logger = "~0.7"
+futures = "~0.3"
+log = "~0.4"
+structopt = "~0.2"
+termion = "~1.5.0"
+tui = "~0.9"
