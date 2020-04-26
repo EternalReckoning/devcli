@@ -4,12 +4,21 @@ version = "0.1.0"
 authors = ["Henry Carlson <henry.carlson@gmail.com>"]
 edition = "2018"
 
+[features]
+default = ["term-termion"]
+
+term-termion = ["termion", "tui/termion"]
+
+term-crossterm = ["crossterm", "tui/crossterm"]
+
 [dependencies]
 eternalreckoning-messaging = { git = "https://github.com/EternalReckoning/messaging", tag = "v0.1.0" }
 
+async-trait = "~0.1"
 env_logger = "~0.7"
 futures = "~0.3"
 log = "~0.4"
 structopt = "~0.2"
-termion = "~1.5.0"
-tui = "~0.9"
+tui = { version = "0.9", default-features = false }
+crossterm = { version = "~0.17", optional = true }
+termion = { version = "~1.5.0", optional = true }
